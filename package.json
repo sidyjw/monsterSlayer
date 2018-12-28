@@ -1,0 +1,14 @@
+{
+  "name": "monster-slayer",
+  "version": "1.0.0",
+  "description": "It's a game to practice VueJS knowlegment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sidiney",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.5.21"
+  }
+}

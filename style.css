@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;   
+}
+body{
+    font-family: 'Arial';
+    padding: 5rem 15rem;
+}
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.player{
+    width: 100%;    
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.player__name{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.player__health-bar{
+    border: 2px solid rgb(11, 85, 4); 
+    width: 80%;
+    background-color: aquamarine;
+    height: 2.5rem;
+}
+.player__health-points{
+    position: absolute;
+    top: 72%;
+    color: #FFF;
+}
+.painel{
+    margin-top: 1.5rem;
+    border: 1px solid gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    box-shadow: 0 10px 30px -2px gainsboro;
+}
+
+.painel__button{
+    text-transform: uppercase;
+    transition: 100ms all linear;
+    font-size: 1.3rem;
+    margin: 0.1rem;
+    padding: 0.3125rem 0.625rem;
+    color: #FFF;
+}
+.painel__button:hover{
+    transform: scale(1.05) 
+}
+.painel__button:active{
+    transform: scale(1.02) 
+}
+
+.painel__button--start{
+    border: 2px solid rgb(11, 85, 4); 
+    background-color: #36ac36;
+}
+.painel__button--attack{
+    border: 2px solid rgb(124, 23, 5); 
+    background-color: #df4119;
+}
+.painel__button--special-attack{
+    border: 2px solid rgb(131, 97, 4); 
+    background-color: #dfaf14;
+}
+.painel__button--heal{
+    border: 2px solid rgb(41, 112, 47); 
+    background-color: #78ff8a;
+}
+.painel__button--give-up{
+    border: 2px solid rgb(97, 97, 97); 
+    background-color: #FFF;
+    color: rgb(97, 97, 97);
+}
