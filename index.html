@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="lodash.js"></script>
 </head>
 
 <body>
@@ -15,22 +16,22 @@
         <header class="main-header">
             <div class="player">
                 <h2 class="player__name">You</h2>
-                <progress class="player__health-bar" value="100" max="100">100</progress>
-                <span class="player__health-points">{{ playerHealth }}</span>
+                <progress class="player__health-bar" :value="playerTotalHealth()" max="100">100</progress>
+                <span class="player__health-points">{{ playerTotalHealth() }}</span>
             </div>
             <div class="player">
                 <h2 class="player__name">Monster</h2>
-                <progress class="player__health-bar" value="100" max="100">100</progress>
-                <span class="player__health-points">{{ monsterHealth }}</span>
+                <progress class="player__health-bar" :value="monsterTotalHealth()" max="100">100</progress>
+                <span class="player__health-points">{{ monsterTotalHealth() }}</span>
             </div>
         </header>
         <div class="painel">
 
             <button v-if="!isStarted" @click="isStarted = !isStarted" class="painel__button painel__button--start">Start new game</button>
             <template v-if="isStarted">
-                <button class="painel__button painel__button--attack">attack</button>
+                <button @click="attack" class="painel__button painel__button--attack">attack</button>
                 <button class="painel__button painel__button--special-attack">special attack</button>
-                <button class="painel__button painel__button--heal">heal</button>
+                <button @click="heal" class="painel__button painel__button--heal">heal</button>
                 <button class="painel__button painel__button--give-up">give up</button>
             </template>
 
