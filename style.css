@@ -84,3 +84,26 @@ body{
     background-color: #FFF;
     color: rgb(97, 97, 97);
 }
+
+.log{
+    list-style: none;
+    margin-top: 1rem;
+    padding: 1.5rem 2rem;
+    border: 1px solid gainsboro;
+}
+.log__damage{
+    margin: 0.5rem;
+    color: #FFF;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0.1rem 0.25rem
+}
+.log__damage--monster{
+    border: 2px solid rgb(124, 23, 5); 
+    background-color: #df4119;
+}
+.log__damage--player{
+    border: 2px solid #053d7c;
+    background-color: rgb(17, 118, 233);
+}

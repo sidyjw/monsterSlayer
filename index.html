@@ -35,9 +35,10 @@
                 <button @click="giveUp" class="painel__button painel__button--give-up">give up</button>
             </template>
         </div>
-        <!-- v-if="playerDamage !== 0" -->
-        <ul >
-
+        <ul v-if="monsterDamage !== 0" class="log">
+                <!--  -->
+                <!--  -->
+            <li v-for="log in logs" :class="log.cl" class="log__damage">{{ log.msg }}</li>
         </ul>
     </div>
     <script src="main.js"></script>

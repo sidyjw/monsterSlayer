@@ -6,6 +6,7 @@ const app = new Vue({
         isStarted: false,
         playerDamage: 0,
         monsterDamage: 0,
+        logs: [],
     },
     methods: {
         reset() {
@@ -14,6 +15,7 @@ const app = new Vue({
             this.isStarted = false;
             this.playerHealth = 100;
             this.monsterHealth = 100;
+            this.logs = [];
         },
         monsterAttack(){
             this.monsterDamage = _.random(1, 25);
@@ -40,6 +42,10 @@ const app = new Vue({
         giveUp(){
             this.reset();
             alert('You give up!')
+        },
+        log(cl, msg, damage){
+            if(this.playerDamage !== 0 || this.monsterDamage !== 0)
+                this.logs.push({cl, msg: `${msg} ${damage}`})
         }
     },
     // computed: {
@@ -57,12 +63,17 @@ const app = new Vue({
                 alert('The monster wins!');
             }
         },
+        playerDamage(){
+            this.log('log__damage--player', 'PLAYER DAMAGE', this.playerDamage)
+        },
         monsterHealth() {
             if (this.monsterHealth <= 0) {
                 this.reset();
                 return alert('You wins!');
             }
-            
+        },
+        monsterDamage(){
+            this.log('log__damage--monster', 'MONSTER DAMAGE', this.monsterDamage)
         }
     }
 })
