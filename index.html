@@ -16,13 +16,13 @@
         <header class="main-header">
             <div class="player">
                 <h2 class="player__name">You</h2>
-                <progress class="player__health-bar" :value="playerTotalHealth()" max="100">100</progress>
-                <span class="player__health-points">{{ playerTotalHealth() }}</span>
+                <progress class="player__health-bar" :value="playerHealth" max="100">100</progress>
+                <span class="player__health-points">{{ playerHealth }}</span>
             </div>
             <div class="player">
                 <h2 class="player__name">Monster</h2>
-                <progress class="player__health-bar" :value="monsterTotalHealth()" max="100">100</progress>
-                <span class="player__health-points">{{ monsterTotalHealth() }}</span>
+                <progress class="player__health-bar" :value="monsterHealth" max="100">100</progress>
+                <span class="player__health-points">{{ monsterHealth }}</span>
             </div>
         </header>
         <div class="painel">
@@ -30,12 +30,15 @@
             <button v-if="!isStarted" @click="isStarted = !isStarted" class="painel__button painel__button--start">Start new game</button>
             <template v-if="isStarted">
                 <button @click="attack" class="painel__button painel__button--attack">attack</button>
-                <button class="painel__button painel__button--special-attack">special attack</button>
+                <button @click="specialAttack" class="painel__button painel__button--special-attack">special attack</button>
                 <button @click="heal" class="painel__button painel__button--heal">heal</button>
-                <button class="painel__button painel__button--give-up">give up</button>
+                <button @click="giveUp" class="painel__button painel__button--give-up">give up</button>
             </template>
-
         </div>
+        <!-- v-if="playerDamage !== 0" -->
+        <ul >
+
+        </ul>
     </div>
     <script src="main.js"></script>
 </body>
