@@ -30,8 +30,23 @@ body{
 .player__health-bar{
     border: 2px solid rgb(11, 85, 4); 
     width: 80%;
-    background-color: aquamarine;
     height: 2.5rem;
+}
+::-moz-progress-bar,
+::-webkit-progress-bar {
+    background-color: rgb(11, 85, 4);
+}
+.change-progress-red::-moz-progress-bar,
+.change-progress-red::-webkit-progress-bar{
+    background-color: #df4119;
+    border: 2px solid #df4119;
+    color: #FFF
+}
+.change-progress-yellow::-moz-progress-bar,
+.change-progress-yellow::-webkit-progress-bar{
+    background-color: #dfaf14;
+    border: 2px solid #dfaf14;
+    color: #FFF;
 }
 .player__health-points{
     position: absolute;
