@@ -7,16 +7,7 @@ const app = new Vue({
         playerDamage: 0,
         monsterDamage: 0,
         logs: [],
-        healthColor: []
     },
-    // computed:{
-    //     healthColor(){
-    //         return{
-    //             'change-progress-red': false,
-    //             'change-progress-yellow': false
-    //         }
-    //     }
-    // },
     methods: {
         reset() {
             this.monsterDamage = 0;
@@ -60,27 +51,13 @@ const app = new Vue({
                 })
         }
     },
-    // computed: {
-    //     playerTotalHealth(){
-    //         return this.playerHealth -= this.monsterDamage;
-    //     },
-    //     monsterTotalHealth(){
-    //         return this.monsterHealth -= this.playerDamage;
-    //     }
-    // },
     watch: {
         playerHealth() {
             if (this.playerHealth <= 0) {
                 this.reset();
                 alert('The monster wins!');
             }
-            if (this.playerHealth <= 50) {
-                this.healthColor.push('change-progress-yellow')
-            }
-            if (this.playerHealth <= 20) {
-                this.healthColor.shift();
-                this.healthColor.push('change-progress-red')
-            }
+            
         },
         playerDamage() {
             this.log('log__damage--player', 'PLAYER DAMAGE', this.playerDamage)
