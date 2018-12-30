@@ -16,17 +16,18 @@
         <header class="main-header">
             <div class="player">
                 <h2 class="player__name">You</h2>
-                <progress class="player__health-bar" :value="playerHealth" max="100">100</progress>
-                <span class="player__health-points">{{ playerHealth }}</span>
+                <div class="player__health-container">
+                    <div class="player__health-bar" :style="playerHealthBar">{{playerHealth}}</div>
+                </div> 
             </div>
             <div class="player">
                 <h2 class="player__name">Monster</h2>
-                <progress class="player__health-bar" :value="monsterHealth" max="100">100</progress>
-                <span class="player__health-points">{{ monsterHealth }}</span>
+                <div class="player__health-container player__health-containe--monster">
+                    <div class="player__health-bar" :style="monsterHealthBar">{{monsterHealth}}</div>
+                </div> 
             </div>
         </header>
         <div class="painel">
-
             <button v-if="!isStarted" @click="isStarted = !isStarted" class="painel__button painel__button--start">Start new game</button>
             <template v-if="isStarted">
                 <button @click="attack" class="painel__button painel__button--attack">attack</button>
